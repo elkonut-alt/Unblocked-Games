@@ -69,6 +69,13 @@
     </style>
   </head>
   <body>
+    <script>
+  // Hardcoded save injection bypasses blocked developer consoles
+  if (!localStorage.getItem('diceamillion_injected')) {
+      localStorage.setItem('dice_a_million_save', 'PASTE_YOUR_LONG_SAVE_STRING_HERE');
+      localStorage.setItem('diceamillion_injected', 'true');
+  }
+</script>
     <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
     <div class="loading">
       <div class="spinner" id="spinner"></div>
